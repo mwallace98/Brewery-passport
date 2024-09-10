@@ -1,0 +1,28 @@
+import React from "react";
+
+
+const Navbar = () => {
+
+    return (
+        <nav className="navbar">
+            <div className="navbar-center">
+                <ul className="nav-links">
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="/profile">Profile</a>
+                </li>
+                <li>
+                    <a href="/breweries">List of Breweries</a>
+                </li>
+                <li>
+                    <a href="/favorites">Favorites</a>
+                </li>
+                </ul>
+            </div>
+        </nav>
+    )
+}
+
+export default Navbar
