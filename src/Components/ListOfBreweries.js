@@ -49,7 +49,7 @@ const Breweries = () => {
 
 
   return (
-    <div className="brewery-list-container">
+    <div className="brewery-list-container" >
       <Navbar />
       <div className="button-group"></div>
         <button onClick={fetchRandomBrewery} style={{ marginBottom: "20px" }}>
@@ -65,11 +65,10 @@ const Breweries = () => {
         {randomBrewery && (
             
         <div className="brewery-list" style={{ backgroundColor: "#ffebcd" }}>
-            {console.log(randomBrewery,'random brewery')}
           <h3>Random Brewery</h3>
           <p>{randomBrewery.name}</p>
           <p>
-            Address: {randomBrewery.street}, {randomBrewery.city}
+            Address: {randomBrewery.street}, {randomBrewery.city}, {randomBrewery.state}
           </p>
           <p>
             Website:{" "}
@@ -106,6 +105,7 @@ const Breweries = () => {
                                 'No Website Available'
                             )}
                     </p>
+                    <button>Details</button>
                 </div> 
             )
         })}

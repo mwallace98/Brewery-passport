@@ -1,10 +1,11 @@
 body {
   background-color: #eef1f5;
   color: #1c2833;
+  background-image: url('/public/backgroundImage.jpg');
 }
 
 .App-header {
-  background-color: #1a1a2e;
+  background-color:rgba(41, 41, 46, 0.35);
   min-height: 100px;
   display: flex;
   justify-content: center;
@@ -42,16 +43,13 @@ body {
 }
 
 .brewery-list-container {
-  max-width: 900px;
+  max-width: 600px;
   margin: 20px auto;
   padding: 45px;
-  background-color: #fafafa;
-  border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .brewery-list {
-  background-color: #e8eaf6;
+  background-color: rgba(225, 227, 235, 0.9);
   border-left: 5px solid #2874a6;
   padding: 15px;
   margin-bottom: 20px;
@@ -98,7 +96,7 @@ body {
 }
 
 .profile-content {
-  background-color: #1a1a2e;
+  background-color:rgba(41, 41, 46, 0.35);
   min-height: 100px;
   display: flex;
   justify-content: center;
@@ -156,7 +154,7 @@ h1 {
 }
 
 button {
-  background-color: #3498db;
+  background-color: rgba(115, 132, 214, 0.95);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -208,17 +206,28 @@ input[type="text"]:focus {
 }
 
 .favorites {
-  padding: 20px;
-  margin-top: 15px;
-  text-align: center;
-  background-color: #eef1f5;
-  color: #1c2833;
-  min-height: 100vh;
+  background-color:rgba(41, 41, 46, 0.35);
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  color: #fff;
+  margin-top: 60px;
 }
 
 .favorites h2 {
   font-size: 2rem;
   margin-bottom: 20px;
+}
+
+.details{
+  padding: 20px;
+  margin-top: 15px;
+  text-align: center;
+  background-image: url('/public/backgroundImage.jpg');
+  color: #1c2833;
+  min-height: 100vh;
 }
 
 @keyframes App-logo-spin {

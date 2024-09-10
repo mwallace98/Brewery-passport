@@ -8,6 +8,7 @@ import ListOfBreweries from './Components/ListOfBreweries'
 import { Router,Route,Routes } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import Favorites from './Components/favorites';
+import BreweryDetails from './Components/brewery-details';
 
 const App = () => {
   const [favorites,setFavorites] = useState(['test Favorite','test Favorite 2'])
@@ -46,6 +47,7 @@ const App = () => {
         />
         <Route path='/breweries' element={<ListOfBreweries />} />
         <Route path='/favorites' element={<Favorites favorites={favorites} />} />
+        <Route path='/details' element={<BreweryDetails />}/>
       </Routes>
     </BrowserRouter>
   );
