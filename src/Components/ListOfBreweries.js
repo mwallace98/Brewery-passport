@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
 import Navbar from "./nav-bar";
+import { useNavigate } from "react-router-dom";
 
 const Breweries = () => {
     const URL = 'https://api.openbrewerydb.org/v1/breweries';
@@ -9,6 +10,7 @@ const Breweries = () => {
     const [randomBrewery,setRandomBrewery] = useState(null);
     const [page,setPage] = useState(1);
 
+    const navigate = useNavigate();
   
   useEffect(() =>{
     fetchBreweries(page)
@@ -84,6 +86,7 @@ const Breweries = () => {
               "No Website Available"
             )}
           </p>
+          <button onClick={() => navigate('/details')}>Details</button>
         </div>
       )}
         {filteredArray.map((breweries) => {
@@ -105,7 +108,7 @@ const Breweries = () => {
                                 'No Website Available'
                             )}
                     </p>
-                    <button>Details</button>
+                    <button onClick={() => navigate(`/details/${breweries.id}`)}>Details</button>
                 </div> 
             )
         })}

@@ -47,7 +47,7 @@ const App = () => {
         />
         <Route path='/breweries' element={<ListOfBreweries />} />
         <Route path='/favorites' element={<Favorites favorites={favorites} />} />
-        <Route path='/details' element={<BreweryDetails />}/>
+        <Route path='/details/:id' element={<BreweryDetails />}/>
       </Routes>
     </BrowserRouter>
   );
