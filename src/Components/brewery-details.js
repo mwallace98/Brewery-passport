@@ -2,13 +2,20 @@ import React,{useEffect,useState} from "react";
 import Navbar from "./nav-bar";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { FaV } from "react-icons/fa6";
+import Favorites from "./favorites";
+import { useNavigate } from "react-router-dom";
 
-const BreweryDetails =() => {
+const BreweryDetails =({addFavorite}) => {
 
     const {id} = useParams()
     const [brewery,setBrewery] = useState([])
 
-   
+    const navigate = useNavigate();
+
+    function goBack(){
+        navigate('/breweries')
+      }
 
     useEffect(() => {
         axios.get(`https://api.openbrewerydb.org/v1/breweries/${id}`)
@@ -20,6 +27,14 @@ const BreweryDetails =() => {
             console.log(err)
         })
     },[])
+
+    function handleFavorite(){
+        if(brewery.length > 0){
+            addFavorite(brewery[0])
+        }
+    }
+
+
 
     return (
         <div className="details-container">
@@ -44,6 +59,8 @@ const BreweryDetails =() => {
                                 'No Website Available'
                             )}
                     </p>
+                    <button onClick={handleFavorite}>Favorite</button>
+                    <button onClick={goBack}>Go Back</button>
                     </>
                 ) : (
                     <p>Loading Details...</p>

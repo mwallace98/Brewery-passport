@@ -1,53 +1,55 @@
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import reportWebVitals from './reportWebVitals';
 import Home from './Home'
 import Profile from './Components/profile';
 import ListOfBreweries from './Components/ListOfBreweries'
-import { Router,Route,Routes } from 'react-router-dom';
+import {Route,Routes } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import Favorites from './Components/favorites';
 import BreweryDetails from './Components/brewery-details';
 
+
 const App = () => {
-  const [favorites,setFavorites] = useState(['test Favorite','test Favorite 2'])
+  const [favorites,setFavorites] = useState([])
 
-  const addFavorite = (item) => {
-    setFavorites((prevFavorites) => [...prevFavorites,item]);
+  useEffect(() => {
+    const storedFavorites = JSON.parse(localStorage.getItem('favorites'))
+      setFavorites(storedFavorites)
+  },[])
+
+  useEffect(() => {
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+  }, [favorites]);
+
+  const addFavorite = (brewery) => {
+    console.log(favorites,'current favorites')
+    setFavorites((prevFavorites) => {
+      if (Array.isArray(prevFavorites) && !prevFavorites.some(fav => fav.id === brewery.id)) {
+        const newFavorites = [...prevFavorites,brewery];
+        localStorage.setItem('favorites',JSON.stringify(newFavorites))
+        return [...prevFavorites, brewery];
+      }
+      return prevFavorites
+    })
   }
 
-  const removeFavorites = (item) => {
-    setFavorites((prevFavorites) => 
-      prevFavorites.filter((favorite) => favorite !== item)
-    )
-  }
+  const removeFavorite =(breweryId) => {
+    setFavorites((prevFavorites) => {
+      const updatedFavorites = prevFavorites.filter(fav => fav.id !== breweryId);
+      localStorage.setItem('favorites',JSON.stringify(updatedFavorites))
+      return updatedFavorites
+    });
+  };
+ 
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path='/'
-          element={
-            <Home
-              favorites={favorites}
-              addFavorite={addFavorite}
-              removeFavorite={removeFavorites}
-            />
-          }
-        />
-        <Route
-          path='/profile'
-          element={
-            <Profile
-              favorites={favorites}
-              addFavorite={addFavorite}
-              removeFavorite={removeFavorites}
-            />
-          }
-        />
+        <Route path='/'element={<Home favorites={favorites} addFavorite={addFavorite} />}/>
+        <Route path='/profile' element={<Profile favorites={favorites} addFavorite={addFavorite} removeFavorite={removeFavorite}/>} />
         <Route path='/breweries' element={<ListOfBreweries />} />
-        <Route path='/favorites' element={<Favorites favorites={favorites} />} />
-        <Route path='/details/:id' element={<BreweryDetails />}/>
+        <Route path='/favorites' element={<Favorites favorites={favorites} removeFavorite={removeFavorite}/>} />
+        <Route path='/details/:id' element={<BreweryDetails addFavorite={addFavorite} removeFavorite={removeFavorite}/>}/>
       </Routes>
     </BrowserRouter>
   );

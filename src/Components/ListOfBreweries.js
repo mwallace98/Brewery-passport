@@ -9,8 +9,11 @@ const Breweries = () => {
     const [search,setSearch] = useState('')
     const [randomBrewery,setRandomBrewery] = useState(null);
     const [page,setPage] = useState(1);
+    
 
     const navigate = useNavigate();
+
+    
   
   useEffect(() =>{
     fetchBreweries(page)
@@ -24,9 +27,7 @@ const Breweries = () => {
     .catch((err) => {
       console.log(err)
     })
-  }
-
- 
+  } 
 
   const fetchRandomBrewery = () => {
     const timestamp = new Date().getTime();
@@ -44,6 +45,8 @@ const Breweries = () => {
   function handleSearch(e){
     setSearch(e.target.value)
   }
+
+ 
 
   const filteredArray = breweries.filter((brewery) => 
     brewery.name.toLowerCase().includes(search.toLowerCase())
@@ -109,6 +112,7 @@ const Breweries = () => {
                             )}
                     </p>
                     <button onClick={() => navigate(`/details/${breweries.id}`)}>Details</button>
+                    
                 </div> 
             )
         })}
