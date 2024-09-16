@@ -2,9 +2,8 @@ import React,{useEffect,useState} from "react";
 import Navbar from "./nav-bar";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import { FaV } from "react-icons/fa6";
-import Favorites from "./favorites";
 import { useNavigate } from "react-router-dom";
+import Posts from "./brewery-posts";
 
 const BreweryDetails =({addFavorite}) => {
 
@@ -60,12 +59,14 @@ const BreweryDetails =({addFavorite}) => {
                             )}
                     </p>
                     <button onClick={handleFavorite}>Favorite</button>
+                    <button onClick={() => navigate('/breweries/check-in')}>Check-in</button>
                     <button onClick={goBack}>Go Back</button>
                     </>
                 ) : (
                     <p>Loading Details...</p>
                 )}
             </div>
+            <Posts />
         </div>
     )
 }

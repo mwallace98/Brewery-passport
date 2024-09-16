@@ -8,6 +8,7 @@ import {Route,Routes } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import Favorites from './Components/favorites';
 import BreweryDetails from './Components/brewery-details';
+import CheckIn from './Components/check-in';
 
 
 const App = () => {
@@ -43,6 +44,7 @@ const App = () => {
         <Route path='/breweries' element={<ListOfBreweries />} />
         <Route path='/favorites' element={<Favorites favorites={favorites} />} />
         <Route path='/details/:id' element={<BreweryDetails addFavorite={addFavorite} />}/>
+        <Route path='/breweries/check-in' element={<CheckIn />} />
       </Routes>
     </BrowserRouter>
   );
