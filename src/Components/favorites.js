@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./nav-bar";
 
 
-const Favorites = ({favorites,removeFavorite}) => {
+const Favorites = ({favorites}) => {
     console.log(favorites[0],'favorites')
 
 
@@ -30,7 +30,7 @@ const Favorites = ({favorites,removeFavorite}) => {
                                 'No Website Available'
                             )}
                     </p>
-                    <button onClick={removeFavorite(brewery.id)}>Remove Favorite</button>
+                   
                 </div> 
                 ))}
             </div>

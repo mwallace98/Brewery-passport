@@ -15,12 +15,11 @@ const App = () => {
 
   useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem('favorites'))
-      setFavorites(storedFavorites)
+    if (storedFavorites) {
+      setFavorites(storedFavorites);
+    }
   },[])
 
-  useEffect(() => {
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-  }, [favorites]);
 
   const addFavorite = (brewery) => {
     console.log(favorites,'current favorites')
@@ -34,22 +33,16 @@ const App = () => {
     })
   }
 
-  const removeFavorite =(breweryId) => {
-    setFavorites((prevFavorites) => {
-      const updatedFavorites = prevFavorites.filter(fav => fav.id !== breweryId);
-      localStorage.setItem('favorites',JSON.stringify(updatedFavorites))
-      return updatedFavorites
-    });
-  };
+ 
  
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/'element={<Home favorites={favorites} addFavorite={addFavorite} />}/>
-        <Route path='/profile' element={<Profile favorites={favorites} addFavorite={addFavorite} removeFavorite={removeFavorite}/>} />
+        <Route path='/profile' element={<Profile favorites={favorites} addFavorite={addFavorite} />} />
         <Route path='/breweries' element={<ListOfBreweries />} />
-        <Route path='/favorites' element={<Favorites favorites={favorites} removeFavorite={removeFavorite}/>} />
-        <Route path='/details/:id' element={<BreweryDetails addFavorite={addFavorite} removeFavorite={removeFavorite}/>}/>
+        <Route path='/favorites' element={<Favorites favorites={favorites} />} />
+        <Route path='/details/:id' element={<BreweryDetails addFavorite={addFavorite} />}/>
       </Routes>
     </BrowserRouter>
   );
