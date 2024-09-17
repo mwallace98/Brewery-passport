@@ -66,7 +66,6 @@ const BreweryDetails =({addFavorite}) => {
                     <p>Loading Details...</p>
                 )}
             </div>
-            <Posts />
         </div>
     )
 }
