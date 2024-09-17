@@ -9,6 +9,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Favorites from './Components/favorites';
 import BreweryDetails from './Components/brewery-details';
 import CheckIn from './Components/check-in';
+import Passport from './Components/passport';
 
 
 const App = () => {
@@ -45,6 +46,7 @@ const App = () => {
         <Route path='/favorites' element={<Favorites favorites={favorites} />} />
         <Route path='/details/:id' element={<BreweryDetails addFavorite={addFavorite} />}/>
         <Route path='/breweries/check-in' element={<CheckIn />} />
+        <Route path='/passport' element={<Passport />}/>
       </Routes>
     </BrowserRouter>
   );

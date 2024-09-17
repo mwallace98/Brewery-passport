@@ -3,8 +3,6 @@ import Navbar from "./nav-bar";
 
 
 const Favorites = ({favorites}) => {
-    console.log(favorites[0],'favorites')
-
 
 
     return (

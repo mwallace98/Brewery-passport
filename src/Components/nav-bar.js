@@ -19,6 +19,9 @@ const Navbar = () => {
                 <li>
                     <a href="/favorites">Favorites</a>
                 </li>
+                <li>
+                    <a href='/passport'>Passport</a>
+                </li>
                 </ul>
             </div>
         </nav>
