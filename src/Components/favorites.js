@@ -2,8 +2,12 @@ import React from "react";
 import Navbar from "./nav-bar";
 
 
-const Favorites = ({favorites}) => {
+const Favorites = ({favorites, removeFavorite}) => {
 
+
+    function removeNewFavorite(){
+        console.log('remove favorite')
+    }
 
     return (
         <div className="favorites-card">
@@ -28,7 +32,7 @@ const Favorites = ({favorites}) => {
                                 'No Website Available'
                             )}
                     </p>
-                   
+                   <button onClick={removeNewFavorite}>Remove Favorite</button>
                 </div> 
                 ))}
             </div>

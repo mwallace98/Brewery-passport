@@ -3,7 +3,7 @@ import axios from "axios";
 import Navbar from "./nav-bar";
 import { Navigate, useNavigate } from "react-router-dom";
 
-const Breweries = () => {
+const Breweries = ({removeFavorite,addFavorite}) => {
     const URL = 'https://api.openbrewerydb.org/v1/breweries';
     const [breweries,setBreweries] = useState([])
     const [search,setSearch] = useState('')
@@ -44,7 +44,13 @@ const Breweries = () => {
       setSearch(e.target.value)
     }
 
-  
+    function newFavorite(brewery){
+      console.log('button clicked')
+      if(brewery){
+        addFavorite(brewery)
+        console.log(breweries[0])
+      }
+  }
 
   
 
@@ -112,6 +118,7 @@ const Breweries = () => {
                               )}
                       </p>
                       <button onClick={() => navigate(`/details/${breweries.id}`)}>Details</button>
+                      <button onClick={() => newFavorite(breweries)}>Add Favorite</button>
                   </div> 
               )
           })}

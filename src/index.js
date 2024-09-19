@@ -35,6 +35,10 @@ const App = () => {
     })
   }
 
+  const removeFavorite = (brewery) => {
+    console.log(brewery,'brewery')
+  }
+
  
  
   return (
@@ -42,7 +46,7 @@ const App = () => {
       <Routes>
         <Route path='/'element={<Home favorites={favorites} addFavorite={addFavorite} />}/>
         <Route path='/profile' element={<Profile favorites={favorites} addFavorite={addFavorite} />} />
-        <Route path='/breweries' element={<ListOfBreweries />} />
+        <Route path='/breweries' element={<ListOfBreweries addFavorite={addFavorite}/>} />
         <Route path='/favorites' element={<Favorites favorites={favorites} />} />
         <Route path='/details/:id' element={<BreweryDetails addFavorite={addFavorite} />}/>
         <Route path='/breweries/check-in' element={<CheckIn />} />

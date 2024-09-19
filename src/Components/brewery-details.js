@@ -27,10 +27,9 @@ const BreweryDetails =({addFavorite}) => {
         })
     },[])
 
-    function handleFavorite(){
-        if(brewery.length > 0){
-            addFavorite(brewery[0])
-        }
+
+    function removeNewFavorite(){
+        console.log('favorite  removed')
     }
 
 
@@ -58,7 +57,6 @@ const BreweryDetails =({addFavorite}) => {
                                 'No Website Available'
                             )}
                     </p>
-                    <button onClick={handleFavorite}>Favorite</button>
                     <button onClick={() => navigate('/breweries/check-in')}>Check-in</button>
                     <button onClick={goBack}>Go Back</button>
                     </>
