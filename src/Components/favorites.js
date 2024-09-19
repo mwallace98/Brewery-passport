@@ -15,7 +15,7 @@ const Favorites = ({favorites, removeFavorite}) => {
             <Navbar />
             <h2>Favorites</h2>
             <div>
-                {favorites.map((brewery) => (
+                {favorites.length > 0 ? (favorites.map((brewery) => (
                     <div className="favorites-list">
                     <p key={brewery.id}>{brewery.name}</p>
                     <p>Address: {brewery.address_1}, {brewery.city}</p>
@@ -35,7 +35,10 @@ const Favorites = ({favorites, removeFavorite}) => {
                     </p>
                    <button onClick={() => removeFavorite(brewery)}>Remove Favorite</button>
                 </div> 
-                ))}
+                ))
+            ) : (
+                <h1>No Favorites</h1>
+            )}
             </div>
         </div>
     )
