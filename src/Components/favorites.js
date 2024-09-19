@@ -5,8 +5,9 @@ import Navbar from "./nav-bar";
 const Favorites = ({favorites, removeFavorite}) => {
 
 
-    function removeNewFavorite(){
+    function removeNewFavorite(brewery){
         console.log('remove favorite')
+        removeFavorite(brewery)
     }
 
     return (
@@ -32,7 +33,7 @@ const Favorites = ({favorites, removeFavorite}) => {
                                 'No Website Available'
                             )}
                     </p>
-                   <button onClick={removeNewFavorite}>Remove Favorite</button>
+                   <button onClick={() => removeFavorite(brewery)}>Remove Favorite</button>
                 </div> 
                 ))}
             </div>

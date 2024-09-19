@@ -37,6 +37,11 @@ const App = () => {
 
   const removeFavorite = (brewery) => {
     console.log(brewery,'brewery')
+    setFavorites((prevFavorites) => {
+      const updatedFavorites = prevFavorites.filter(fav => fav.id !==brewery.id);
+      localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+      return updatedFavorites
+    })
   }
 
  
@@ -47,7 +52,7 @@ const App = () => {
         <Route path='/'element={<Home favorites={favorites} addFavorite={addFavorite} />}/>
         <Route path='/profile' element={<Profile favorites={favorites} addFavorite={addFavorite} />} />
         <Route path='/breweries' element={<ListOfBreweries addFavorite={addFavorite}/>} />
-        <Route path='/favorites' element={<Favorites favorites={favorites} />} />
+        <Route path='/favorites' element={<Favorites favorites={favorites} removeFavorite={removeFavorite}/>} />
         <Route path='/details/:id' element={<BreweryDetails addFavorite={addFavorite} />}/>
         <Route path='/breweries/check-in' element={<CheckIn />} />
         <Route path='/passport' element={<Passport />}/>
