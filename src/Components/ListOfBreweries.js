@@ -45,10 +45,8 @@ const Breweries = ({removeFavorite,addFavorite}) => {
     }
 
     function newFavorite(brewery){
-      console.log('button clicked')
       if(brewery){
         addFavorite(brewery)
-        console.log(breweries[0])
       }
   }
 
@@ -95,7 +93,8 @@ const Breweries = ({removeFavorite,addFavorite}) => {
                 "No Website Available"
               )}
             </p>
-            <button onClick={() => navigate('/details')}>Details</button>
+            <button onClick={() => navigate(`/details/${randomBrewery.id}`)}>Details</button>
+            <button onClick={() => newFavorite(breweries)}>Add Favorite</button>
           </div>
         )}
           {filteredArray.map((breweries) => {

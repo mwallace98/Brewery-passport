@@ -24,7 +24,6 @@ const App = () => {
 
 
   const addFavorite = (brewery) => {
-    console.log(favorites,'current favorites')
     setFavorites((prevFavorites) => {
       if (Array.isArray(prevFavorites) && !prevFavorites.some(fav => fav.id === brewery.id)) {
         const newFavorites = [...prevFavorites,brewery];
@@ -36,7 +35,6 @@ const App = () => {
   }
 
   const removeFavorite = (brewery) => {
-    console.log(brewery,'brewery')
     setFavorites((prevFavorites) => {
       const updatedFavorites = prevFavorites.filter(fav => fav.id !==brewery.id);
       localStorage.setItem('favorites', JSON.stringify(updatedFavorites));

@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./nav-bar";
+import { BiColor } from "react-icons/bi";
 
 
 const Favorites = ({favorites, removeFavorite}) => {
@@ -37,7 +38,7 @@ const Favorites = ({favorites, removeFavorite}) => {
                 </div> 
                 ))
             ) : (
-                <h1>No Favorites</h1>
+                <h1 style={{color:"white"}}>No Favorites</h1>
             )}
             </div>
         </div>

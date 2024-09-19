@@ -3,7 +3,6 @@ import Navbar from "./nav-bar";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import Posts from "./brewery-posts";
 
 const BreweryDetails =({addFavorite}) => {
 
@@ -26,11 +25,6 @@ const BreweryDetails =({addFavorite}) => {
             console.log(err)
         })
     },[])
-
-
-    function removeNewFavorite(){
-        console.log('favorite  removed')
-    }
 
 
 
