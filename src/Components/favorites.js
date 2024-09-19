@@ -1,15 +1,9 @@
 import React from "react";
 import Navbar from "./nav-bar";
-import { BiColor } from "react-icons/bi";
+
 
 
 const Favorites = ({favorites, removeFavorite}) => {
-
-
-    function removeNewFavorite(brewery){
-        console.log('remove favorite')
-        removeFavorite(brewery)
-    }
 
     return (
         <div className="favorites-card">

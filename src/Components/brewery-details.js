@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const BreweryDetails =({addFavorite}) => {
+const BreweryDetails =() => {
 
     const {id} = useParams()
     const [brewery,setBrewery] = useState([])
@@ -19,7 +19,6 @@ const BreweryDetails =({addFavorite}) => {
         axios.get(`https://api.openbrewerydb.org/v1/breweries/${id}`)
         .then((res) => {
             setBrewery([res.data])
-            console.log(brewery,'brewwery')
         })
         .catch((err) => {
             console.log(err)
