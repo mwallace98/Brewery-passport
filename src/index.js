@@ -49,9 +49,9 @@ const App = () => {
       <Routes>
         <Route path='/'element={<Home favorites={favorites} addFavorite={addFavorite} />}/>
         <Route path='/profile' element={<Profile favorites={favorites} addFavorite={addFavorite} />} />
-        <Route path='/breweries' element={<ListOfBreweries addFavorite={addFavorite}/>} />
+        <Route path='/breweries' element={<ListOfBreweries addFavorite={addFavorite} removeFavorite={removeFavorite}/>} />
         <Route path='/favorites' element={<Favorites favorites={favorites} removeFavorite={removeFavorite}/>} />
-        <Route path='/details/:id' element={<BreweryDetails addFavorite={addFavorite} />}/>
+        <Route path='/details/:id' element={<BreweryDetails addFavorite={addFavorite} removeFavorite={removeFavorite}/>}/>
         <Route path='/breweries/check-in' element={<CheckIn />} />
         <Route path='/passport' element={<Passport />}/>
       </Routes>
