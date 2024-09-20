@@ -28,7 +28,7 @@ const Favorites = ({favorites, removeFavorite}) => {
                                 'No Website Available'
                             )}
                     </p>
-                   <button onClick={() => removeFavorite()}>Remove Favorite</button>
+                   <button onClick={() => removeFavorite(brewery)}>Remove Favorite</button>
                 </div> 
                 ))
             ) : (
