@@ -8,13 +8,10 @@ const Navbar = () => {
             <div className="navbar-center">
                 <ul className="nav-links">
                 <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
                     <a href="/profile">Profile</a>
                 </li>
                 <li>
-                    <a href="/breweries">List of Breweries</a>
+                    <a href="/">Home</a>
                 </li>
                 <li>
                     <a href="/favorites">Favorites</a>

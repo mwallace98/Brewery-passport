@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const BreweryDetails =() => {
+const BreweryDetails =({addStamped}) => {
 
     const {id} = useParams()
     const [brewery,setBrewery] = useState([])
@@ -25,6 +25,8 @@ const BreweryDetails =() => {
         })
     },[])
 
+   
+  
 
 
     return (
@@ -50,8 +52,9 @@ const BreweryDetails =() => {
                                 'No Website Available'
                             )}
                     </p>
-                    <button onClick={() => navigate('/breweries/check-in')}>Check-in</button>
+                    <button onClick={() => console.log('check in')}>Check-in</button>
                     <button onClick={goBack}>Go Back</button>
+                    <button onClick={() => addStamped(brewery[0])}>Stamp Passport</button>
                     </>
                 ) : (
                     <p>Loading Details...</p>
