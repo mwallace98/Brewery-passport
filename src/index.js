@@ -12,6 +12,8 @@ import CheckIn from './Components/check-in';
 import Passport from './Components/passport';
 
 
+
+
 const App = () => {
   const [favorites,setFavorites] = useState([])
   const [stampedBreweries,setStampedBreweries] = useState([])
@@ -71,15 +73,16 @@ const App = () => {
         <Route path='/breweries/check-in' element={<CheckIn />} />
         <Route path='/passport' element={<Passport stampedBreweries={stampedBreweries} addStamped={addStamped}/>}/>
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter>  
   );
   
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
   <React.StrictMode>
-    <App />
+          <App />
   </React.StrictMode>
 );
 

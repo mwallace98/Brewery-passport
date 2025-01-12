@@ -3,6 +3,7 @@ import axios from "axios";
 import Navbar from "./nav-bar";
 import { Navigate, useNavigate } from "react-router-dom";
 
+
 const Breweries = ({removeFavorite,addFavorite,favorites}) => {
     const URL = 'https://api.openbrewerydb.org/v1/breweries';
     const [breweries,setBreweries] = useState([])
@@ -10,6 +11,7 @@ const Breweries = ({removeFavorite,addFavorite,favorites}) => {
     const [randomBrewery,setRandomBrewery] = useState(null);
     const [page,setPage] = useState(1);
     
+   
 
     const navigate = useNavigate();
   
@@ -26,6 +28,8 @@ const Breweries = ({removeFavorite,addFavorite,favorites}) => {
         console.log(err)
       })
     } 
+
+
 
     const fetchRandomBrewery = () => {
       const timestamp = new Date().getTime();
@@ -60,6 +64,7 @@ const Breweries = ({removeFavorite,addFavorite,favorites}) => {
     return (
       <div className="brewery-list-container" >
         <Navbar />
+        
         <div className="button-group"></div>
           <button onClick={fetchRandomBrewery} style={{ marginBottom: "20px" }}>
               Get Random Brewery

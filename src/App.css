@@ -249,6 +249,7 @@ input[type="text"]:focus {
   background-color: #f5f5f5;
   min-height: 100vh;
   background-image: url('/public/backgroundImage.jpg');
+  
 }
 
 .favorites-card h2 {
@@ -262,7 +263,7 @@ input[type="text"]:focus {
 }
 
 .favorites-list {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.8);
   margin: 20px auto;
   padding: 15px;
   border-radius: 8px;
@@ -285,6 +286,7 @@ input[type="text"]:focus {
   color: #007bff;
   text-decoration: none;
 }
+
 
 .favorites-list a:hover {
   text-decoration: underline;
