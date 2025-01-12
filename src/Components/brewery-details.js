@@ -3,6 +3,7 @@ import Navbar from "./nav-bar";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import CustomMap from "./map";
 
 const BreweryDetails =({addStamped}) => {
 
@@ -59,6 +60,7 @@ const BreweryDetails =({addStamped}) => {
                 ) : (
                     <p>Loading Details...</p>
                 )}
+                <CustomMap />
             </div>
         </div>
     )
