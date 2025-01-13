@@ -2,18 +2,14 @@
 import React, { useState } from "react";
 import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
 
-const CustomMap = () => {
+const CustomMap = ({center}) => {
 
     const libraries = ['places'];
 const mapContainerStyle = {
   width: '100vw',
   height: '100vh',
 };
-const center = {
-  lat: 7.2905715,
-  lng: 80.6337262, 
-};
- 
+
 const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: 'AIzaSyBBJU7dxSRfQwXS0Sruco9NF05IlgvFxVE',
     libraries,
@@ -29,13 +25,14 @@ const { isLoaded, loadError } = useLoadScript({
 
   return (
     <div className="map-container">
-   <GoogleMap
+   {/* <GoogleMap
         mapContainerStyle={mapContainerStyle}
-        zoom={10}
+        zoom={20}
         center={center}
+        
       >
         <Marker position={center} />
-      </GoogleMap>
+      </GoogleMap> */}
       
     </div>
   );

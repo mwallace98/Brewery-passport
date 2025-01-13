@@ -20,6 +20,7 @@ const BreweryDetails =({addStamped}) => {
         axios.get(`https://api.openbrewerydb.org/v1/breweries/${id}`)
         .then((res) => {
             setBrewery([res.data])
+            console.log(res.data)
         })
         .catch((err) => {
             console.log(err)
@@ -51,7 +52,9 @@ const BreweryDetails =({addStamped}) => {
                             </a>
                             ) : (
                                 'No Website Available'
+                                
                             )}
+                
                     </p>
                     <button onClick={() => console.log('check in')}>Check-in</button>
                     <button onClick={goBack}>Go Back</button>
@@ -60,7 +63,16 @@ const BreweryDetails =({addStamped}) => {
                 ) : (
                     <p>Loading Details...</p>
                 )}
-                <CustomMap />
+            
+                {brewery.length > 0 && brewery[0].latitude && brewery[0].longitude ? (
+                    <CustomMap 
+                    center={{
+                        lat:parseFloat(brewery[0].latitude),
+                        lng:parseFloat(brewery[0].longitude)
+                    }}
+                    /> ) : (
+                        <p>Map Data Not Available</p>
+                    )} 
             </div>
         </div>
     )
