@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Home from './Home'
 import Profile from './components/profile';
-import ListOfBreweries from './components/listOfBreweries'
+import ListOfBreweries from './components/listOfBreweries';
 import {json, Route,Routes } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 import Favorites from './components/favorites';
-import BreweryDetails from './components/brewery-details';
+import BreweryDetails from './Components/brewery-details';
 import CheckIn from './components/check-in';
 import Passport from './components/passport';
 
