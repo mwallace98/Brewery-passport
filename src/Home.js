@@ -1,7 +1,7 @@
 
 import React from 'react';
 import './App.css';
-import Navbar from './Components/nav-bar';
+import Navbar from './components/nav-bar';
 
 const Home = () => {
 
