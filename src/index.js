@@ -2,7 +2,7 @@ import React,{useEffect, useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Home from './Home'
-import Profile from './components/profile';
+import Profile from './components/profilepage';
 import ListOfBreweries from './components/listOfBreweries';
 import {json, Route,Routes } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
