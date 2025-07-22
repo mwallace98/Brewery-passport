@@ -1,28 +1,41 @@
-Brewery Passport App
-A web application that allows users to have a virtual "passport" to track breweries visited, Clone of the below but for Massachusetts:
-https://www.ribrewersguild.org/passport
+# Brewery Passport App
 
-Built with React
+A virtual "passport" to track breweries you’ve visited – a Massachusetts-focused clone of the [Rhode Island Brewers Guild Passport](https://www.ribrewersguild.org/passport).
 
-Live Demo
-https://brewery-passport.vercel.app/
-Preview
-<img width="1894" height="938" alt="image" src="https://github.com/user-attachments/assets/9c1df115-af93-4d86-a122-b25b1118da3f" />
+**Live Demo:** [https://brewery-passport.vercel.app/](https://brewery-passport.vercel.app/)
 
+---
 
-Tech Stack
-Frontend
-React
+## Preview
 
+<img width="800" alt="Brewery Passport App Preview" src="https://github.com/user-attachments/assets/9c1df115-af93-4d86-a122-b25b1118da3f" />
 
-APIs Used
-OpenBreweryDB: https://www.openbrewerydb.org/
+---
 
-Features
-Displays list of breweries in Massachusetts
-User can search for Breweries or get a random Brewery
-Ablility to add brewery to favorites and add to passport once visited.
+## Tech Stack
 
-Future Improvements
-Add Profile page to save breweries to.
+**Frontend:**  
+- React
+
+**APIs Used:**  
+- [OpenBreweryDB](https://www.openbrewerydb.org/)
+
+---
+
+## Features
+
+- Displays a list of breweries in Massachusetts  
+- Search for breweries by name or location  
+- Get a random brewery suggestion  
+- Add breweries to favorites  
+- Mark breweries as visited (add to "passport")
+
+---
+
+## Future Improvements
+
+- Add a profile page to save visited breweries  
+- Map integration to show breweries on a map  
+- Improved mobile optimization
+
 
