@@ -15,10 +15,10 @@ A virtual "passport" to track breweries you’ve visited – a Massachusetts-foc
 ## Tech Stack
 
 **Frontend:**  
-- React
+React
 
 **APIs Used:**  
-- [OpenBreweryDB](https://www.openbrewerydb.org/)
+OpenBreweryDB – [https://www.openbrewerydb.org/](https://www.openbrewerydb.org/)
 
 ---
 
@@ -37,5 +37,6 @@ A virtual "passport" to track breweries you’ve visited – a Massachusetts-foc
 - Add a profile page to save visited breweries  
 - Map integration to show breweries on a map  
 - Improved mobile optimization
+
 
 
